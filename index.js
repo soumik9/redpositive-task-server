@@ -12,6 +12,7 @@ app.use(express.json());
 // requires
 const connection = require("./db");
 const profileRoute = require('./routes/profileRoute');
+const mailRoute = require('./routes/mailRoute');
 
 // database connection
 (async () => await connection())();
@@ -26,6 +27,7 @@ async function run() {
       })
 
       app.use('/api/profile', profileRoute);
+      app.use('/api', mailRoute);
 
       } finally {
 
