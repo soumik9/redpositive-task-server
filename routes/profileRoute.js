@@ -4,16 +4,19 @@ const mongoose = require('mongoose');
 
 const ProfileController = require('../controllers/ProfileController');
 
-//get all users
+//get all profile
 router.get('/index', ProfileController.index);
 
-//create new permission
+//get single profile
+router.get('/:profileId', ProfileController.single);
+
+//create new profile
 router.post('/create', ProfileController.create);
 
-//update a user
+//update a profile
 router.patch('/:profileId', ProfileController.update);
 
-//delete a user
+//delete a profile
 router.delete('/:profileId', ProfileController.destroy);
 
 
